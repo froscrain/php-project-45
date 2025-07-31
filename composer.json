@@ -1,15 +1,19 @@
 {
-    "name": "hexlet/code",
-    "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
-    },
+    "name": "froscrain/php-project-45",
+    "description": "Set of five console games",
+    "version": "0.0.1",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ivan Kryukovskiy",
             "email": "froscrain@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Php\\Project\\45\\": "src"
+        }
+    },
     "require": {}
 }
