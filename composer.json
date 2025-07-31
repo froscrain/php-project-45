@@ -10,6 +10,9 @@
             "email": "froscrain@gmail.com"
         }
     ],
+        "bin": [
+        "bin/brain-games"
+    ],
     "autoload": {
         "psr-4": {
             "Php\\Project\\45\\": "src"

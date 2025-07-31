@@ -5,4 +5,4 @@ validate:
 	composer validate
 
 brain-games:
-	php bin/brain-games.php
+	./bin/brain-games
