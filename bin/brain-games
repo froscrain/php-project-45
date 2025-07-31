@@ -1,4 +1,14 @@
 #!/usr/bin/env php
 <?php
 
-print_r("Welcome to the Brain Games!\n");
+$autoloadPathGlobal = __DIR__ . '/../autoload.php';
+$autoloadPathLocal = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadPathGlobal)) {
+    require_once $autoloadPathGlobal;
+} else {
+    require_once $autoloadPathLocal;
+}
+
+use function PhpProject45\Cli\greeting;
+
+greeting();

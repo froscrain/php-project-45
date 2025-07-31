@@ -10,13 +10,18 @@
             "email": "froscrain@gmail.com"
         }
     ],
-        "bin": [
+    "bin": [
         "bin/brain-games"
     ],
     "autoload": {
         "psr-4": {
             "Php\\Project\\45\\": "src"
-        }
+        },
+        "files": [
+            "src/Cli.php"
+        ]
     },
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.5"
+    }
 }
