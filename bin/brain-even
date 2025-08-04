@@ -9,6 +9,6 @@ if (file_exists($autoloadPathGlobal)) {
     require_once $autoloadPathLocal;
 }
 
-use function PhpProject45\Cli\greeting;
+use function PhpProject45\Games\Even\startGame;
 
-greeting();
+startGame();

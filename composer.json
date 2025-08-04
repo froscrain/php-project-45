@@ -11,14 +11,16 @@
         }
     ],
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "autoload": {
         "psr-4": {
             "Php\\Project\\45\\": "src"
         },
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Games/Even.php"
         ]
     },
     "require": {
