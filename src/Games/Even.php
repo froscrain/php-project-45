@@ -1,35 +1,35 @@
 <?php
 
-namespace PhpProject45\Games\Even;
+namespace BrainGames\Games\Even;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Engine\startGame;
 
-function isEven($number): bool
+use const BrainGames\Engine\ROUNDS_COUNT;
+
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+function isEven(int $number): bool
 {
     return $number % 2 === 0;
 }
 
-function startGame()
+function prepareGameData(): array
 {
-    line('Welcome to the Brain Games!');
-    $playerName = prompt('May I have your name?', false, ' ');
-    line("Hello, %s!", $playerName);
+    $data = [];
 
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
+        $question = random_int(1, 100);
+        $answer = isEven($question) ? 'yes' : 'no';
 
-    for ($i = 1; $i <= 3; $i++) {
-        $number = rand(1, 100);
-        line("Question: %s", $number);
-
-        $received = prompt('Your answer:', false, ' ');
-        $expected = isEven($number) ? 'yes' : 'no';
-        if ($received !== $expected) {
-            line("%s is wrong answer ;(. Correct answer was %s.", $received, $expected);
-            line("Let's try again, %s!", $playerName);
-            return null;
-        }
-        line('Correct!');
+        $data[] = [$question, $answer];
     }
-    line("Congratulations, %s!", $playerName);
+
+    return $data;
+}
+
+function startBrainEvenGame(): void
+{
+    $data = prepareGameData();
+
+    startGame($data, DESCRIPTION);
 }
