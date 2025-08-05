@@ -8,7 +8,7 @@ use const BrainGames\Engine\ROUNDS_COUNT;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function getGcd($number1, $number2): int
+function getGcd(int $number1, int $number2): int
 {
     while ($number2 !== 0) {
         $remainder = $number1 % $number2;
