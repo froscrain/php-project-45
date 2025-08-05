@@ -8,16 +8,23 @@ use const BrainGames\Engine\ROUNDS_COUNT;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-function calculate(int $number1, int $number2, string $operator)
+function calculate(int $number1, int $number2, string $operator): ?int
 {
     switch ($operator) {
         case '+':
-            return $number1 + $number2;
+            $result =  $number1 + $number2;
+            break;
         case '-':
-            return $number1 - $number2;
+            $result = $number1 - $number2;
+            break;
         case '*':
-            return $number1 * $number2;
+            $result = $number1 * $number2;
+            break;
+        default:
+            $result = null;
     }
+
+    return $result;
 }
 
 function prepareGameData(): array
@@ -29,7 +36,7 @@ function prepareGameData(): array
         $number2 = random_int(1, 10);
 
         $operators = ['+', '-', '*'];
-        $operator = $operators[random_int(0, 2)];
+        $operator = $operators[random_int(0, count($operators) - 1)];
 
         $question = "{$number1} {$operator} {$number2}";
         $answer = (string) calculate($number1, $number2, $operator);
